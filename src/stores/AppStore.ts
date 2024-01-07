@@ -4,7 +4,7 @@ export const appStore = defineStore('app',{
 
     state: () => {
         return {
-            language: 'pt-br'
+            language: '',
         }
     }
 })

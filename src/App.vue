@@ -2,9 +2,9 @@
   <div></div>
   <div class="commom">
     <NavBar />
-    <section id="hero"><ViewIntro /></section>
-    <section id="about">dsada</section>
-    <section id="experience">sdada</section>
+    <section id="hero"><HeroView /></section>
+    <section id="about"><AboutView /></section>
+    <section id="experience"></section>
     <section id="stack"></section>
     <section id="projects"></section>
   </div>
@@ -12,17 +12,25 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import ViewIntro from '@/views/HeroView.vue'
+import { defineComponent, onMounted } from 'vue'
+import HeroView from '@/views/HeroView.vue'
+import AboutView from '@/views/AboutView.vue'
 import NavBar from '@/components/ui/NavBar.vue'
+import { appStore } from './stores/AppStore'
 
 export default defineComponent({
   components: {
-    ViewIntro: ViewIntro,
-    NavBar: NavBar
+    NavBar,
+    HeroView,
+    AboutView
   },
 
   setup() {
+    const useStore = appStore()
+    onMounted(() => {
+      // TODO: setup language based on location. if [br, pt, ...] ? 'pt-br' : 'eng'
+      useStore.language = 'pt-br'
+    })
     return {}
   }
 })

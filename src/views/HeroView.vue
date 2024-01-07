@@ -1,16 +1,9 @@
 <template>
   <div class="content">
     <div class="hero-flex-item">
-      <div v-if="language === 'pt-br'">
-        <h2>{{ ptbr.salute.intro }}</h2>
-        <h1>{{ ptbr.salute.title }}</h1>
-        <h2>{{ ptbr.salute.subtitle }}</h2>
-      </div>
-      <div v-if="language === 'eng'">
-        <h2>{{ eng.salute.intro }}</h2>
-        <h1>{{ eng.salute.title }}</h1>
-        <h2>{{ eng.salute.subtitle }}</h2>
-      </div>
+      <h2>{{ useHero.content.greeting.intro }}</h2>
+      <h1>{{ useHero.content.greeting.title }}</h1>
+      <h2>{{ useHero.content.greeting.subtitle }}</h2>
     </div>
     <div class="hero-flex-item">
       <p>
@@ -24,19 +17,15 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import { heroStore } from '@/stores/HeroStore'
-import { appStore } from '@/stores/AppStore'
-import { storeToRefs } from 'pinia'
+import { defineComponent, reactive } from 'vue'
+import { useHeroStore } from '@/stores/HeroStore'
 
 export default defineComponent({
   setup() {
-    const HeroStore = heroStore()
-    const AppStore = appStore()
-    const { eng, ptbr } = storeToRefs(HeroStore)
-    const { language } = storeToRefs(AppStore)
+    const useHero = useHeroStore()
+    //const textContent = reactive(useHero.getTextByLanguage)
 
-    return { eng, ptbr, language }
+    return { useHero }
   }
 })
 </script>
@@ -46,11 +35,11 @@ export default defineComponent({
   height: 100dvh;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 h1 {
-  font-size: 4em;
+  font-size: 5em;
   font-family: Gilroy;
 }
 h2 {
@@ -58,8 +47,8 @@ h2 {
 }
 .hero-flex-item {
   max-width: 50%;
+  /* padding: 5%; */
   margin: auto;
-  padding: 5%;
 }
 
 @media (max-width: 500px) {
