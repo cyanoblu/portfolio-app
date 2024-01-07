@@ -5,7 +5,7 @@
     <section id="hero"><HeroView /></section>
     <section id="about"><AboutView /></section>
     <section id="experience"></section>
-    <section id="stack"></section>
+    <section id="skills"></section>
     <section id="projects"></section>
   </div>
   <div></div>

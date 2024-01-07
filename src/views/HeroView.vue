@@ -17,14 +17,12 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive } from 'vue'
+import { defineComponent } from 'vue'
 import { useHeroStore } from '@/stores/HeroStore'
 
 export default defineComponent({
   setup() {
     const useHero = useHeroStore()
-    //const textContent = reactive(useHero.getTextByLanguage)
-
     return { useHero }
   }
 })
@@ -37,7 +35,6 @@ export default defineComponent({
   flex-direction: row;
   justify-content: space-around;
 }
-
 h1 {
   font-size: 5em;
   font-family: Gilroy;
