@@ -2,10 +2,12 @@
   <div class="content">
     <div class="hero-flex-item">
       <div v-if="language === 'pt-br'">
+        <h2>{{ ptbr.salute.intro }}</h2>
         <h1>{{ ptbr.salute.title }}</h1>
         <h2>{{ ptbr.salute.subtitle }}</h2>
       </div>
       <div v-if="language === 'eng'">
+        <h2>{{ eng.salute.intro }}</h2>
         <h1>{{ eng.salute.title }}</h1>
         <h2>{{ eng.salute.subtitle }}</h2>
       </div>
@@ -23,15 +25,15 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { introStore } from '@/stores/IntroStore'
+import { heroStore } from '@/stores/HeroStore'
 import { appStore } from '@/stores/AppStore'
 import { storeToRefs } from 'pinia'
 
 export default defineComponent({
   setup() {
-    const IntroStore = introStore()
+    const HeroStore = heroStore()
     const AppStore = appStore()
-    const { eng, ptbr } = storeToRefs(IntroStore)
+    const { eng, ptbr } = storeToRefs(HeroStore)
     const { language } = storeToRefs(AppStore)
 
     return { eng, ptbr, language }
@@ -40,6 +42,7 @@ export default defineComponent({
 </script>
 <style scoped>
 .content {
+  margin-top: -4em;
   height: 100dvh;
   display: flex;
   flex-direction: row;
@@ -47,16 +50,16 @@ export default defineComponent({
 }
 
 h1 {
-  font-size: 54px;
+  font-size: 4em;
+  font-family: Gilroy;
 }
 h2 {
-  font-size: 24px;
+  font-size: 2em;
 }
 .hero-flex-item {
   max-width: 50%;
   margin: auto;
-  padding: 2%;
-  font-family: Gilroy;
+  padding: 5%;
 }
 
 @media (max-width: 500px) {
@@ -67,7 +70,10 @@ h2 {
   }
 
   .hero-flex-item {
+    max-width: 95%;
+    margin: auto;
     padding: auto;
   }
 }
 </style>
+@/stores/heroStore

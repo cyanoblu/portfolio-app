@@ -66,19 +66,7 @@ body {
     color 0.5s,
     background-color 0.5s;
   line-height: 1.2;
-  font-family:
-    Inter,
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
-    sans-serif;
+  font-family: Gilroy-Light;
   font-size: 15px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -87,5 +75,10 @@ body {
 
 @font-face {
   font-family: Gilroy;
-  src: url('@/assets/fonts/Gilroy-ExtraBold.otf');;
+  src: url('@/assets/fonts/Gilroy-ExtraBold.otf');
+}
+
+@font-face {
+  font-family: Gilroy-Light;
+  src: url('@/assets/fonts/Gilroy-Light.otf');
 }
