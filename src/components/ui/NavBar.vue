@@ -1,48 +1,53 @@
 <template>
   <nav class="navbar-wrapper">
-    <Menubar class="navbar" :model="menuItems" />
+    <ul class="navbar-list">
+      <li>About</li>
+      <li>Experience</li>
+      <li>Skills</li>
+      <li>Projects</li>
+    </ul>
   </nav>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
-import Menubar from 'primevue/menubar'
+import { defineComponent } from 'vue'
 
 export default defineComponent({
-  components: {
-    Menubar
-  },
+  components: {},
   setup() {
-    const menuItems = ref([
-      {
-        label: 'Sobre'
-      },
-      {
-        label: 'Experiência'
-      },
-      {
-        label: 'Skills'
-      },
-      {
-        label: 'Projetos'
+    function toggleDark(): void {
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark')
+        document.documentElement.classList.add('light')
+      } else {
+        document.documentElement.classList.add('dark')
+        document.documentElement.classList.remove('light')
       }
-    ])
+    }
 
-    return { menuItems }
+    return {}
   }
 })
 </script>
 
-<style scoped>
+<style lang="scss">
 .navbar-wrapper {
+  position: absolute;
   background-color: #0396a6;
-  width: 100dvw;
+  width: 100%;
   height: 85px;
   display: grid;
   justify-content: center;
-}
-.navbar {
-  color: var(--vt-c-black);
-  font-size: 1.5em;
+
+  .navbar-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    li {
+      padding: 1.5em;
+      margin: auto;
+    }
+  }
 }
 </style>

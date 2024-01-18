@@ -10,7 +10,7 @@ export const useHeroStore = defineStore('hero', () => {
         */
 
         const useApp =  appStore()
-        const { language } = storeToRefs(useApp)
+        const { locale } = storeToRefs(useApp)
         
         const content = ref({
             greeting: {} as Greeting
@@ -29,11 +29,11 @@ export const useHeroStore = defineStore('hero', () => {
                 subtitle: "Sou desenvolvedor"
             } as Greeting
         })
-        watch(language,() => {
-            if (language.value === "pt-br") {
+        watch(locale,() => {
+            if (locale.value === "pt-br") {
                 content.value = ptbr.value
 
-            } else if (language.value === "eng") {
+            } else if (locale.value === "eng") {
                 content.value = eng.value
             }
         })

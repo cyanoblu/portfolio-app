@@ -4,7 +4,7 @@
     <NavBar />
     <section id="hero"><HeroView /></section>
     <section id="about"><AboutView /></section>
-    <section id="experience"></section>
+    <section id="experience"><ExpView /></section>
     <section id="skills"></section>
     <section id="projects"></section>
   </div>
@@ -12,24 +12,30 @@
 </template>
 
 <script lang="ts">
+//App config
 import { defineComponent, onMounted } from 'vue'
+//View sections
 import HeroView from '@/views/HeroView.vue'
 import AboutView from '@/views/AboutView.vue'
+import ExpView from '@/views/ExperienceView.vue'
+//Components
 import NavBar from '@/components/ui/NavBar.vue'
+//Stores
 import { appStore } from './stores/AppStore'
 
 export default defineComponent({
   components: {
     NavBar,
     HeroView,
-    AboutView
+    AboutView,
+    ExpView
   },
 
   setup() {
     const useStore = appStore()
     onMounted(() => {
       // TODO: setup language based on location. if [br, pt, ...] ? 'pt-br' : 'eng'
-      useStore.language = 'pt-br'
+      useStore.locale = 'pt-br'
     })
     return {}
   }
@@ -41,5 +47,9 @@ export default defineComponent({
   flex-direction: column;
   align-items: center;
   max-width: 1280px;
+}
+
+#experience {
+  width: 100%;
 }
 </style>

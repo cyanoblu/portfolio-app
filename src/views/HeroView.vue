@@ -29,7 +29,6 @@ export default defineComponent({
 </script>
 <style scoped>
 .content {
-  margin-top: -4em;
   height: 100dvh;
   display: flex;
   flex-direction: row;
@@ -44,7 +43,6 @@ h2 {
 }
 .hero-flex-item {
   max-width: 50%;
-  /* padding: 5%; */
   margin: auto;
 }
 
@@ -58,7 +56,6 @@ h2 {
   .hero-flex-item {
     max-width: 95%;
     margin: auto;
-    padding: auto;
   }
 }
 </style>
