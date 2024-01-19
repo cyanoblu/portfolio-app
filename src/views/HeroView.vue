@@ -27,7 +27,8 @@ export default defineComponent({
   }
 })
 </script>
-<style scoped>
+<style scoped lang="scss">
+@import '../assets/variables.scss';
 .content {
   height: 100dvh;
   display: flex;
@@ -46,7 +47,7 @@ h2 {
   margin: auto;
 }
 
-@media (max-width: 500px) {
+@media (max-width: $media-size) {
   .content {
     flex-direction: column;
     margin-left: 2%;

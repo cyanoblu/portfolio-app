@@ -5,7 +5,7 @@
   --vt-c-white-mute: #0396A6;
 
   --vt-c-black: #070D06;
-  --vt-c-black-soft: #222222;
+  --vt-c-black-soft: #2D3133;
   --vt-c-black-mute: #070D06;
 
   --vt-c-indigo: #2c3e50;
@@ -63,7 +63,7 @@
 body {
   min-height: 100vh;
   color: var(--color-text);
-  background: var(--color-background);
+  background-color: var(--color-background);
   transition:
     color 0.5s,
     background-color 0.5s;
@@ -72,6 +72,11 @@ body {
   font-size: 15px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+}
+
+a{
+  text-decoration: none;
+  color: var(--color-text);
 }
 
 @font-face {

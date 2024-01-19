@@ -1,6 +1,6 @@
 import { defineStore, storeToRefs } from 'pinia'
 import { ref, watch } from 'vue'
-import { appStore } from './AppStore'
+import { useAppStore } from './AppStore'
 export const useHeroStore = defineStore('hero', () => {
         /**
         *   Stores all the content for the hero section.
@@ -9,7 +9,7 @@ export const useHeroStore = defineStore('hero', () => {
         *   This pattern repeats on every section.
         */
 
-        const useApp =  appStore()
+        const useApp =  useAppStore()
         const { locale } = storeToRefs(useApp)
         
         const content = ref({

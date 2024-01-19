@@ -1,10 +1,10 @@
 import { defineStore, storeToRefs } from 'pinia'
 import { ref, watch } from 'vue'
-import { appStore } from './AppStore'
+import { useAppStore } from './AppStore'
 
 export const useAboutStore = defineStore( 'about', () => {
 
-    const useApp =  appStore()
+    const useApp =  useAppStore()
     const { locale } = storeToRefs(useApp)
 
     const content = ref({
@@ -27,7 +27,7 @@ export const useAboutStore = defineStore( 'about', () => {
 
     const eng = ref({
         about : {
-            title: '',
+            title: 'About me',
             p1: '',
             p2: '',
             p3: '',

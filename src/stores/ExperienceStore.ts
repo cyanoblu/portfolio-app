@@ -1,6 +1,6 @@
 import { defineStore, storeToRefs } from 'pinia'
 import { ref, watch } from 'vue'
-import { appStore } from './AppStore'
+import { useAppStore } from './AppStore'
 
 export const useExperienceStore = defineStore('experience' ,() => {
 

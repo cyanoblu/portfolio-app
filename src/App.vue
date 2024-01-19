@@ -21,7 +21,7 @@ import ExpView from '@/views/ExperienceView.vue'
 //Components
 import NavBar from '@/components/ui/NavBar.vue'
 //Stores
-import { appStore } from './stores/AppStore'
+import { useAppStore } from './stores/AppStore'
 
 export default defineComponent({
   components: {
@@ -32,7 +32,7 @@ export default defineComponent({
   },
 
   setup() {
-    const useStore = appStore()
+    const useStore = useAppStore()
     onMounted(() => {
       // TODO: setup language based on location. if [br, pt, ...] ? 'pt-br' : 'eng'
       useStore.locale = 'pt-br'
