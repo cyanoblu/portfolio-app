@@ -1,12 +1,15 @@
 <template>
   <div></div>
   <div class="commom">
-    <NavBar />
-    <section id="hero"><HeroView /></section>
-    <section id="about"><AboutView /></section>
-    <section id="experience"><ExpView /></section>
-    <section id="skills"></section>
-    <section id="projects"></section>
+    <header><NavBar /></header>
+    <main>
+      <section id="hero"><HeroView /></section>
+      <section id="about"><AboutView /></section>
+      <section id="experience"><ExpView /></section>
+      <section id="skills"></section>
+      <section id="projects"></section>
+    </main>
+    <footer></footer>
   </div>
   <div></div>
 </template>
