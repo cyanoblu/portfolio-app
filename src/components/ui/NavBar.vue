@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar-wrapper" :class="{ toggle: navToggle }">
+  <nav class="navbar-wrapper" :class="{ toggle: toggleOn }">
     <button id="toggle-btn" @click="toggleCollapse">
       <div id="btn-bar-container">
         <div id="btn-bar-1"></div>
@@ -57,14 +57,14 @@ export default defineComponent({
   setup() {
     const useStore = useAppStore()
     const isCollapsed = ref(true)
-    const navToggle = ref(false)
+    const toggleOn = ref(false)
 
     function toggleCollapse() {
       isCollapsed.value === true ? (isCollapsed.value = false) : (isCollapsed.value = true)
-      navToggle.value === true ? (navToggle.value = false) : (navToggle.value = true)
+      toggleOn.value === true ? (toggleOn.value = false) : (toggleOn.value = true)
     }
 
-    return { useStore, isCollapsed, navToggle, toggleCollapse }
+    return { useStore, isCollapsed, toggleOn, toggleCollapse }
   }
 })
 </script>
@@ -207,43 +207,6 @@ svg text {
       animation-timing-function: linear;
       animation-fill-mode: forwards;
     }
-
-    @keyframes animate-menu-bar-1 {
-      0% {
-      }
-      20% {
-        transform: translate(0, 9px);
-      }
-      80% {
-        transform: translate(0, 9px);
-      }
-      100% {
-        transform: rotate(45deg);
-      }
-    }
-    @keyframes animate-menu-bar-2 {
-      0% {
-      }
-      80% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(45deg);
-      }
-    }
-    @keyframes animate-menu-bar-3 {
-      0% {
-      }
-      20% {
-        transform: translate(0, -9px);
-      }
-      80% {
-        transform: translate(0, -9px);
-      }
-      100% {
-        transform: rotate(-45deg);
-      }
-    }
   }
   .navbar-list {
     flex-direction: column !important;
@@ -257,79 +220,116 @@ svg text {
     #btn-bar-container {
       position: relative;
     }
+  }
+  $btn-bar-margin: 4px;
 
-    $btn-bar-margin: 4px;
-
-    #btn-bar-1 {
-      background-color: $color-black;
-      width: 20px;
-      height: 4px;
-      position: absolute;
-      bottom: 7px;
-      left: 4px;
-      transform-origin: -1px 6px;
-      animation-name: animate-menu-bar-1-reversed;
-      animation-duration: 0.4s;
-      animation-timing-function: linear;
+  #btn-bar-1 {
+    background-color: $color-black;
+    width: 20px;
+    height: 4px;
+    position: absolute;
+    bottom: 7px;
+    left: 4px;
+    transform-origin: -1px 6px;
+    animation-name: animate-menu-bar-1-reversed;
+    animation-duration: 0.4s;
+    animation-timing-function: linear;
+  }
+  #btn-bar-2 {
+    background-color: $color-black;
+    width: 20px;
+    height: 4px;
+    position: absolute;
+    top: -2px;
+    left: 4px;
+    animation-name: animate-menu-bar-2-reversed;
+    animation-duration: 0.4s;
+    animation-timing-function: linear;
+  }
+  #btn-bar-3 {
+    background-color: $color-black;
+    width: 20px;
+    height: 4px;
+    position: absolute;
+    top: 7px;
+    left: 4px;
+    transform-origin: -1px -2px;
+    animation-name: animate-menu-bar-3-reversed;
+    animation-duration: 0.4s;
+    animation-timing-function: linear;
+  }
+  @keyframes animate-menu-bar-1-reversed {
+    0% {
+      transform: rotate(45deg);
     }
-    #btn-bar-2 {
-      background-color: $color-black;
-      width: 20px;
-      height: 4px;
-      position: absolute;
-      top: -2px;
-      left: 4px;
-      animation-name: animate-menu-bar-2-reversed;
-      animation-duration: 0.4s;
-      animation-timing-function: linear;
+    20% {
+      transform: rotate(45deg);
+      transform: translate(0, 9px);
     }
-    #btn-bar-3 {
-      background-color: $color-black;
-      width: 20px;
-      height: 4px;
-      position: absolute;
-      top: 7px;
-      left: 4px;
-      transform-origin: -1px -2px;
-      animation-name: animate-menu-bar-1-reversed;
-      animation-duration: 0.4s;
-      animation-timing-function: linear;
+    80% {
+      transform: translate(0, 9px);
     }
-    @keyframes animate-menu-bar-1-reversed {
-      0% {
-      }
-      20% {
-        transform: translate(0, 9px);
-      }
-      80% {
-        transform: translate(0, 9px);
-      }
-      100% {
-        transform: rotate(45deg);
-      }
+    100% {
     }
-    @keyframes animate-menu-bar-2-reversed {
-      0% {
-      }
-      80% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(45deg);
-      }
+  }
+  @keyframes animate-menu-bar-2-reversed {
+    0% {
+      transform: rotate(45deg);
     }
-    @keyframes animate-menu-bar-3-reversed {
-      0% {
-      }
-      20% {
-        transform: translate(0, -9px);
-      }
-      80% {
-        transform: translate(0, -9px);
-      }
-      100% {
-        transform: rotate(-45deg);
-      }
+    20% {
+      transform: rotate(0deg);
+    }
+    100% {
+    }
+  }
+  @keyframes animate-menu-bar-3-reversed {
+    0% {
+      transform: rotate(-45deg);
+    }
+    20% {
+      transform: rotate(-45deg);
+      transform: translate(0, -9px);
+    }
+    80% {
+      transform: translate(0, -9px);
+    }
+    100% {
+    }
+  }
+  @keyframes animate-menu-bar-1 {
+    0% {
+    }
+    20% {
+      transform: translate(0, 9px);
+    }
+    80% {
+      transform: translate(0, 9px);
+    }
+    100% {
+      transform: rotate(45deg);
+    }
+  }
+  @keyframes animate-menu-bar-2 {
+    0% {
+    }
+    80% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(45deg);
+    }
+  }
+  @keyframes animate-menu-bar-3 {
+    0% {
+    }
+    20% {
+      transform: translate(0, -9px);
+    }
+    80% {
+      transform: translate(0, -9px);
+    }
+    100% {
+      transform: rotate(-45deg);
     }
   }
 }
