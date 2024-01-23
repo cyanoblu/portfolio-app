@@ -1,6 +1,12 @@
 <template>
   <nav class="navbar-wrapper" :class="{ toggle: navToggle }">
-    <button id="toggle-btn" @click="toggleCollapse"></button>
+    <button id="toggle-btn" @click="toggleCollapse">
+      <div id="btn-bar-container">
+        <div id="btn-bar-1"></div>
+        <div id="btn-bar-2"></div>
+        <div id="btn-bar-3"></div>
+      </div>
+    </button>
     <ul :class="{ collapsed: isCollapsed }" class="navbar-list">
       <li>
         <a href=""
@@ -73,23 +79,16 @@ export default defineComponent({
   width: 100%;
   height: 85px;
   display: grid;
-  justify-content: center;
-  transition: height 0.4s ease;
+  transition: height 0.3s ease;
 
   .navbar-list {
     width: 70%;
     display: flex;
-    visibility: visible;
-    opacity: 1;
     flex-direction: row;
     list-style: none;
     margin-top: 0.5em;
-    justify-content: center;
     justify-self: center;
-    transition:
-      visibility 0.1s,
-      opacity 0.1s;
-    transition-timing-function: linear;
+    align-items: center;
 
     li {
       margin: auto;
@@ -117,7 +116,7 @@ export default defineComponent({
 }
 
 svg {
-  width: fit-content;
+  width: 150px;
   height: 25px;
 }
 
@@ -161,25 +160,177 @@ svg text {
   width: 40px;
   margin: auto;
   position: absolute;
+  border: none;
 }
 
-@media (max-width: $media-size) {
+@media (max-width: $media-size-navbar) {
   .navbar-wrapper {
     height: 40px;
 
     .collapsed {
-      opacity: 0;
-      visibility: hidden;
+      display: none;
     }
   }
   .toggle {
     height: 250px;
+
+    #toggle-btn {
+    }
+    #btn-bar-1 {
+      /* background-color: red !important; */
+      width: 20px;
+      height: 4px;
+      animation-name: animate-menu-bar-1;
+      animation-duration: 0.4s;
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;
+    }
+    #btn-bar-2 {
+      /* background-color: blue !important; */
+      width: 20px;
+      height: 4px;
+      top: -2px;
+      left: 4px;
+      animation-name: animate-menu-bar-2;
+      animation-duration: 0.4s;
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;
+    }
+    #btn-bar-3 {
+      /* background-color: green !important; */
+      width: 20px;
+      height: 4px;
+      top: 7px;
+      left: 4px;
+      animation-name: animate-menu-bar-3;
+      animation-duration: 0.4s;
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes animate-menu-bar-1 {
+      0% {
+      }
+      20% {
+        transform: translate(0, 9px);
+      }
+      80% {
+        transform: translate(0, 9px);
+      }
+      100% {
+        transform: rotate(45deg);
+      }
+    }
+    @keyframes animate-menu-bar-2 {
+      0% {
+      }
+      80% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(45deg);
+      }
+    }
+    @keyframes animate-menu-bar-3 {
+      0% {
+      }
+      20% {
+        transform: translate(0, -9px);
+      }
+      80% {
+        transform: translate(0, -9px);
+      }
+      100% {
+        transform: rotate(-45deg);
+      }
+    }
   }
   .navbar-list {
     flex-direction: column !important;
   }
   #toggle-btn {
     display: inline;
+    background-color: transparent;
+    margin-left: 4px;
+    /* border: none; */
+
+    #btn-bar-container {
+      position: relative;
+    }
+
+    $btn-bar-margin: 4px;
+
+    #btn-bar-1 {
+      background-color: $color-black;
+      width: 20px;
+      height: 4px;
+      position: absolute;
+      bottom: 7px;
+      left: 4px;
+      transform-origin: -1px 6px;
+      animation-name: animate-menu-bar-1-reversed;
+      animation-duration: 0.4s;
+      animation-timing-function: linear;
+    }
+    #btn-bar-2 {
+      background-color: $color-black;
+      width: 20px;
+      height: 4px;
+      position: absolute;
+      top: -2px;
+      left: 4px;
+      animation-name: animate-menu-bar-2-reversed;
+      animation-duration: 0.4s;
+      animation-timing-function: linear;
+    }
+    #btn-bar-3 {
+      background-color: $color-black;
+      width: 20px;
+      height: 4px;
+      position: absolute;
+      top: 7px;
+      left: 4px;
+      transform-origin: -1px -2px;
+      animation-name: animate-menu-bar-1-reversed;
+      animation-duration: 0.4s;
+      animation-timing-function: linear;
+    }
+    @keyframes animate-menu-bar-1-reversed {
+      0% {
+      }
+      20% {
+        transform: translate(0, 9px);
+      }
+      80% {
+        transform: translate(0, 9px);
+      }
+      100% {
+        transform: rotate(45deg);
+      }
+    }
+    @keyframes animate-menu-bar-2-reversed {
+      0% {
+      }
+      80% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(45deg);
+      }
+    }
+    @keyframes animate-menu-bar-3-reversed {
+      0% {
+      }
+      20% {
+        transform: translate(0, -9px);
+      }
+      80% {
+        transform: translate(0, -9px);
+      }
+      100% {
+        transform: rotate(-45deg);
+      }
+    }
   }
 }
 </style>
