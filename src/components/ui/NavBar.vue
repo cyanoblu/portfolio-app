@@ -73,7 +73,7 @@ export default defineComponent({
 @import '../../assets/variables.scss';
 
 .navbar-wrapper {
-  background-color: #0396a6;
+  background-color: var(--color-navbar);
   position: absolute;
   margin-left: -50%;
   width: 100%;
@@ -82,7 +82,6 @@ export default defineComponent({
   transition: height 0.3s ease;
 
   .navbar-list {
-    width: 70%;
     display: flex;
     flex-direction: row;
     list-style: none;
@@ -95,15 +94,14 @@ export default defineComponent({
       width: fit-content;
       a {
         font-size: 1.5em;
-        color: $color-black;
       }
     }
   }
 }
 
 .text-body {
-  fill: $color-black;
-  stroke: $color-black;
+  fill: var(--color-text-nav);
+  stroke: var(--color-text-nav);
   stroke-dashoffset: 0%;
   stroke-dasharray: 0% 50%;
   animation: 0.5s linear normal animate-stroke-out;
@@ -149,7 +147,6 @@ svg text {
   }
   100% {
     stroke-dashoffset: 0%;
-    fill: $color-black;
     stroke-dasharray: 0% 50%;
   }
 }
@@ -174,36 +171,31 @@ svg text {
   .toggle {
     height: 250px;
 
-    #toggle-btn {
-    }
     #btn-bar-1 {
-      /* background-color: red !important; */
       width: 20px;
       height: 4px;
       animation-name: animate-menu-bar-1;
-      animation-duration: 0.4s;
+      animation-duration: $bar-btn-animation-duration;
       animation-timing-function: linear;
       animation-fill-mode: forwards;
     }
     #btn-bar-2 {
-      /* background-color: blue !important; */
       width: 20px;
       height: 4px;
       top: -2px;
       left: 4px;
       animation-name: animate-menu-bar-2;
-      animation-duration: 0.4s;
+      animation-duration: $bar-btn-animation-duration;
       animation-timing-function: linear;
       animation-fill-mode: forwards;
     }
     #btn-bar-3 {
-      /* background-color: green !important; */
       width: 20px;
       height: 4px;
       top: 7px;
       left: 4px;
       animation-name: animate-menu-bar-3;
-      animation-duration: 0.4s;
+      animation-duration: $bar-btn-animation-duration;
       animation-timing-function: linear;
       animation-fill-mode: forwards;
     }
@@ -215,7 +207,6 @@ svg text {
     display: inline;
     background-color: transparent;
     margin-left: 4px;
-    /* border: none; */
 
     #btn-bar-container {
       position: relative;
@@ -232,7 +223,7 @@ svg text {
     left: 4px;
     transform-origin: -1px 6px;
     animation-name: animate-menu-bar-1-reversed;
-    animation-duration: 0.4s;
+    animation-duration: $bar-btn-animation-duration;
     animation-timing-function: linear;
   }
   #btn-bar-2 {
@@ -243,7 +234,7 @@ svg text {
     top: -2px;
     left: 4px;
     animation-name: animate-menu-bar-2-reversed;
-    animation-duration: 0.4s;
+    animation-duration: $bar-btn-animation-duration;
     animation-timing-function: linear;
   }
   #btn-bar-3 {
@@ -255,7 +246,7 @@ svg text {
     left: 4px;
     transform-origin: -1px -2px;
     animation-name: animate-menu-bar-3-reversed;
-    animation-duration: 0.4s;
+    animation-duration: $bar-btn-animation-duration;
     animation-timing-function: linear;
   }
   @keyframes animate-menu-bar-1-reversed {

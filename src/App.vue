@@ -52,7 +52,12 @@ export default defineComponent({
   max-width: 1280px;
 }
 
+#about {
+  background-color: var(--color-section-about);
+}
+
 #experience {
   width: 100%;
+  /* background-color: var(--color-section-exp); */
 }
 </style>

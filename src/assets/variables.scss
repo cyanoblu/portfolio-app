@@ -1,11 +1,22 @@
-$media-size: 700px;
-$media-size-navbar: 800px;
+/* Colors */
 
 $primary-color: #0396A6;
 $primary-color-light: #04D9D9;
 $primary-color-light2: #03A6A6;
 
 $secondary-color: #012615;
+$tertiary-color: #053B41;
 
 $color-black: #070D06;
+$color-white: #B9D1E2;
+
+/* Media & Sizing */
+
+$media-size: 800px;
+$media-size-navbar: 800px;
+
+/* Components */
+
+/* Navbar */
+$bar-btn-animation-duration: 0.3s
 

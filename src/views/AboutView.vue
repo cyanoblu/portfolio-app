@@ -5,7 +5,13 @@
     </div>
     <div class="about-flex-item">
       <p>{{ useAbout.content.about.p1 }}</p>
-      <p>{{ useAbout.content.about.p2 }}</p>
+      <p>
+        {{ useAbout.content.about.p2 }}
+        <a class="emphasis emph1">{{ useAbout.content.about.emphasis1 }}</a>
+        {{ useAbout.content.about.conjunction }}
+        <a class="emphasis emph2">{{ useAbout.content.about.emphasis2 }}</a
+        >.
+      </p>
       <p>{{ useAbout.content.about.p3 }}</p>
     </div>
   </div>
@@ -41,6 +47,14 @@ export default defineComponent({
 
 h2 {
   font-size: 2em;
+}
+
+.emphasis {
+  font-family: Gilroy;
+}
+
+.emph1 {
+  color: var(--color-text-emph-vue);
 }
 
 @media (max-width: $media-size) {
