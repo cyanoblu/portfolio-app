@@ -1,14 +1,14 @@
 /* color palette from <https://github.com/vuejs/theme> */
 :root {
-  --vt-c-white: #B9D1E2;
+  --vt-c-white: #C2D5E2;
   --vt-c-white-soft: #b9d1e2bd;
   --vt-c-white-mute: #B9D1E2;
 
   --vt-c-black: #070D06;
-  --vt-c-black-soft: #2d3133;
+  --vt-c-black-soft: #2D3134;
   --vt-c-black-mute: #070D06;
 
-  --pt-c-dark-blue: #053B41;
+  --pt-c-dark-blue: #012A2F;
   --pt-c-primary-color: #0396A6;
 
   --pt-c-complementary-1: #DB8B16;
@@ -20,12 +20,12 @@
   --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
   --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
 
-  --vt-c-text-light-1: var(--pt-c-dark-blue);
+  --vt-c-text-light-1: var(--vt-c-black-soft);
   --vt-c-text-light-2: var(--vt-c-white);
   --vt-c-text-dark-1: var(--vt-c-white-soft);
   --vt-c-text-dark-2: var(--vt-c-black);
 
-  --pt-c-text-vue-light: #35495e;
+  --pt-c-text-vue-light: #42b883;
   --pt-c-text-vue-dark: #42b883;
 
 
@@ -48,7 +48,7 @@
   --color-text-nav: var(--vt-c-text-light-2);
   --color-navbar: var(--pt-c-dark-blue);
 
-  --color-section-about: var(--pt-c-complementary-1);
+  --color-section-about: var(--pt-c-dark-blue);
   --color-section-exp: var(--pt-c-complementary-2);
 
   --section-gap: 160px;

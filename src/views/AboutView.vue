@@ -31,6 +31,7 @@ export default defineComponent({
 <style scoped lang="scss">
 @import '../assets/variables.scss';
 .content {
+  color: var(--vt-c-text-light-2);
   height: 100dvh;
   display: flex;
   flex-direction: row;

@@ -38,6 +38,7 @@ export default defineComponent({
 h1 {
   font-size: 5em;
   font-family: Gilroy;
+  color: var(--color-navbar);
 }
 h2 {
   font-size: 2em;

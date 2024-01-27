@@ -77,7 +77,7 @@ export default defineComponent({
   position: absolute;
   margin-left: -50%;
   width: 100%;
-  height: 85px;
+  height: 75px;
   display: grid;
   transition: height 0.3s ease;
 
@@ -215,7 +215,7 @@ svg text {
   $btn-bar-margin: 4px;
 
   #btn-bar-1 {
-    background-color: $color-black;
+    background-color: var(--color-background);
     width: 20px;
     height: 4px;
     position: absolute;
@@ -227,7 +227,7 @@ svg text {
     animation-timing-function: linear;
   }
   #btn-bar-2 {
-    background-color: $color-black;
+    background-color: var(--color-background);
     width: 20px;
     height: 4px;
     position: absolute;
@@ -238,7 +238,7 @@ svg text {
     animation-timing-function: linear;
   }
   #btn-bar-3 {
-    background-color: $color-black;
+    background-color: var(--color-background);
     width: 20px;
     height: 4px;
     position: absolute;

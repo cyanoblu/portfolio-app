@@ -35,7 +35,7 @@ export default defineComponent({
 }
 
 .experience-flex-item {
-  max-width: 50%;
+  max-width: 60%;
   margin: auto;
   line-height: 1.7;
   letter-spacing: 1.5px;
