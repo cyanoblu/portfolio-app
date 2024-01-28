@@ -6,7 +6,8 @@ export const useAppStore = defineStore('app', () => {
     const locale = ref('')
 
     const content = ref({
-        navbar: {} as NavBarContent
+        navbar: {} as NavbarHeader,
+        sectionTitle: {} as SectionHeader
     })
 
     const ptbr = ref({
@@ -15,7 +16,13 @@ export const useAppStore = defineStore('app', () => {
             experience: 'Experiência',
             skills: 'Habilidades',
             projects: 'Projetos'
-        }
+        } as NavbarHeader,
+        sectionTitle: {
+            about: 'Sobre',
+            experience: 'Experiência',
+            skills: 'Habilidades',
+            projects: 'Projetos'
+        } as SectionHeader
     })
 
     const eng = ref ({
@@ -24,7 +31,13 @@ export const useAppStore = defineStore('app', () => {
             experience: 'Experience',
             skills: 'Skills',
             projects: 'Projects'
-        }
+        } as NavbarHeader,
+        sectionTitle: {
+            about: 'About',
+            experience: 'Experience',
+            skills: 'Skills',
+            projects: 'Projects'
+        } as SectionHeader
     })
 
     watch(locale,() => {
@@ -39,7 +52,14 @@ export const useAppStore = defineStore('app', () => {
     return {locale, content}
 })
 
-interface NavBarContent {
+interface NavbarHeader {
+    about: string,
+    experience: string,
+    skills: string,
+    projects: string    
+}
+
+interface SectionHeader {
     about: string,
     experience: string,
     skills: string,

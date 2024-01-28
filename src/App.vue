@@ -6,7 +6,7 @@
       <section id="hero"><HeroView /></section>
       <section id="about"><AboutView /></section>
       <section id="experience"><ExpView /></section>
-      <section id="skills"></section>
+      <section id="skills"><SkillView /></section>
       <section id="projects"></section>
     </main>
     <footer></footer>
@@ -21,6 +21,7 @@ import { defineComponent, onMounted } from 'vue'
 import HeroView from '@/views/HeroView.vue'
 import AboutView from '@/views/AboutView.vue'
 import ExpView from '@/views/ExperienceView.vue'
+import SkillView from '@/views/SkillView.vue'
 //Components
 import NavBar from '@/components/ui/NavBar.vue'
 //Stores
@@ -31,7 +32,8 @@ export default defineComponent({
     NavBar,
     HeroView,
     AboutView,
-    ExpView
+    ExpView,
+    SkillView
   },
 
   setup() {

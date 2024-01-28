@@ -4,7 +4,7 @@
       <TimelineExp />
     </div>
     <div class="experience-flex-item">
-      <h2>Experiência</h2>
+      <h2>{{ useApp.content.sectionTitle.experience }}</h2>
     </div>
   </div>
 </template>
@@ -13,6 +13,7 @@
 import { defineComponent } from 'vue'
 import TimelineExp from '@/components/data/TimelineExp.vue'
 import { useExperienceStore } from '@/stores/ExperienceStore'
+import { useAppStore } from '@/stores/AppStore'
 
 export default defineComponent({
   components: {
@@ -20,8 +21,9 @@ export default defineComponent({
   },
   setup() {
     const useExperience = useExperienceStore()
+    const useApp = useAppStore()
 
-    return { useExperience }
+    return { useExperience, useApp }
   }
 })
 </script>

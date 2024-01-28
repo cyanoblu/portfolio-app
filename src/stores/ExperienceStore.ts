@@ -9,7 +9,6 @@ export const useExperienceStore = defineStore('experience' ,() => {
 
     const content = ref({
         experience1 : {} as experience,
-        experience2 : {} as experience
     })
 
     const ptbr = ref({
