@@ -7,9 +7,13 @@
       <p>{{ useAbout.content.about.p1 }}</p>
       <p>
         {{ useAbout.content.about.p2 }}
-        <a class="emphasis emph1">{{ useAbout.content.about.emphasis1 }}</a>
+        <a href="https://vuejs.org/" class="emphasis emph1" target="_blank">{{
+          useAbout.content.about.emphasis1
+        }}</a>
         {{ useAbout.content.about.conjunction }}
-        <a class="emphasis emph2">{{ useAbout.content.about.emphasis2 }}</a
+        <a href="https://apexcharts.com/" class="emphasis emph2" target="_blank">{{
+          useAbout.content.about.emphasis2
+        }}</a
         >.
       </p>
       <p>{{ useAbout.content.about.p3 }}</p>
@@ -56,6 +60,10 @@ h2 {
 
 .emph1 {
   color: var(--color-text-emph-vue);
+}
+
+.emph2 {
+  color: var(--pt-c-text-apexcharts);
 }
 
 @media (max-width: $media-size) {

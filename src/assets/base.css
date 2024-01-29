@@ -9,6 +9,7 @@
   --vt-c-black-mute: #070D06;
 
   --pt-c-dark-blue: #012A2F;
+  --pt-c-dark-blue-2: #02424B;
   --pt-c-primary-color: #0396A6;
 
   --pt-c-complementary-1: #DB8B16;
@@ -27,6 +28,8 @@
 
   --pt-c-text-vue-light: #42b883;
   --pt-c-text-vue-dark: #42b883;
+
+  --pt-c-text-apexcharts: #008ffb;
 
 
   --media-size: 700px;
