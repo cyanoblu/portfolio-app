@@ -36,7 +36,9 @@ export default defineComponent({
 @import '../assets/variables.scss';
 .content {
   color: var(--vt-c-text-light-2);
-  height: 100dvh;
+  height: var(--content-height);
+  max-height: var(--content-max-height);
+  min-height: var(--content-min-height);
   display: flex;
   flex-direction: row;
   justify-content: space-around;

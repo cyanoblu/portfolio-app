@@ -10,10 +10,13 @@
 
   --pt-c-dark-blue: #012A2F;
   --pt-c-dark-blue-2: #02424B;
-  --pt-c-primary-color: #0396A6;
+  --pt-c-primary-color: #0396a6;
 
   --pt-c-complementary-1: #DB8B16;
   --pt-c-complementary-2: #A62303;
+
+  --pt-c-gradient1: hsla(153, 47%, 49%, 0.096);
+  --pt-c-gradient2: hsla(186, 96%, 33%, 0.705);
   
 
   --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
@@ -28,11 +31,13 @@
 
   --pt-c-text-vue-light: #42b883;
   --pt-c-text-vue-dark: #42b883;
-
   --pt-c-text-apexcharts: #008ffb;
 
 
   --media-size: 700px;
+  --content-height: 100dvh;
+  --content-min-height: 500px;
+  --content-max-height: 768px;
 }
 
 /* semantic color variables for this project */

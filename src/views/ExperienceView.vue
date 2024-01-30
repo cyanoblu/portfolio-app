@@ -30,7 +30,9 @@ export default defineComponent({
 <style scoped lang="scss">
 @import '../assets/variables.scss';
 .content {
-  height: 100dvh;
+  height: var(--content-height);
+  max-height: var(--content-max-height);
+  min-height: var(--content-min-height);
   display: flex;
   flex-direction: row;
   justify-content: space-around;
