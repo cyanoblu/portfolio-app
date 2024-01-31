@@ -8,85 +8,98 @@ export const useSkillStore = defineStore('skill' ,() => {
     const { locale } = storeToRefs(useApp)
 
     const content = ref({
-        skill1 : {} as skill,
+        skill1 : {} as Skill,
     })
+
+    const drawables = {
+        javascript: '/src/assets/svg/javascript.svg',
+        typescript: '/src/assets/svg/typescript.svg',
+        python: '/src/assets/svg/python.svg',
+        html: '/src/assets/svg/html.svg',
+        css: '/src/assets/svg/css.svg',
+        oracle: '/src/assets/svg/oracle.svg',
+        vue: '/src/assets/svg/vue.svg',
+        sass: '/src/assets/svg/sass.svg',
+        nodejs: '/src/assets/svg/nodejs.svg'
+
+    }
 
     const ptbr = ref({
         skill1: {
             skill: 'Javascript',
-            src: '/src/assets/svg/javascript.svg'
-        } as skill,
+            src: drawables.javascript
+        } as Skill,
         skill2: {
             skill: 'Typescript',
-            src: '/src/assets/svg/typescript.svg'
-        } as skill,
+            src: drawables.typescript
+        } as Skill,
         skill3: {
             skill: 'Python',
-            src: '/src/assets/svg/python.svg'
-        } as skill,
+            src: drawables.python
+        } as Skill,
         skill4: {
             skill: 'HTML',
-            src: '/src/assets/svg/html.svg'
-        } as skill,
+            src: drawables.html
+        } as Skill,
         skill5: {
             skill: 'CSS',
-            src: '/src/assets/svg/css.svg'
-        } as skill,
+            src: drawables.css
+        } as Skill,
         skill6: {
             skill: 'PL/SQL',
-            src: '/src/assets/svg/oracle.svg'
-        } as skill,
+            src: drawables.oracle
+        } as Skill,
         skill7: {
             skill: 'Vue',
-            src: '/src/assets/svg/vue.svg'
-        } as skill,
+            src: drawables.vue
+        } as Skill,
         skill8: {
             skill: 'Sass',
-            src: '/src/assets/svg/sass.svg'
-        } as skill,
+            src: drawables.sass
+        } as Skill,
         skill9: {
             skill: 'Node.js',
-            src: '/src/assets/svg/nodejs.svg'
-        } as skill,
+            src: drawables.nodejs
+        } as Skill,
     })
 
     const eng = ref({
         skill1: {
             skill: 'Javascript',
-            src: '/src/assets/svg/javascript.svg'
-        } as skill,
+            src: drawables.javascript
+        } as Skill,
         skill2: {
             skill: 'Typescript',
-            src: '/src/assets/svg/typescript.svg'
-        } as skill,
+            src: drawables.typescript
+        } as Skill,
         skill3: {
             skill: 'Python',
-            src: '/src/assets/svg/python.svg'
-        } as skill,
+            src: drawables.python
+        } as Skill,
         skill4: {
             skill: 'HTML',
-            src: '/src/assets/svg/html.svg'
-        } as skill,
+            src: drawables.html
+        } as Skill,
         skill5: {
             skill: 'CSS',
-            src: '/src/assets/svg/css.svg'
-        } as skill,
+            src: drawables.css
+        } as Skill,
         skill6: {
             skill: 'PL/SQL',
-            src: '/src/assets/svg/oracle.svg'
-        } as skill,
+            src: drawables.oracle
+        } as Skill,
         skill7: {
             skill: 'Vue',
-            src: '/src/assets/svg/vue.svg'
-        } as skill,
+            src: drawables.vue
+        } as Skill,
         skill8: {
             skill: 'Sass',
-            src: '/src/assets/svg/sass.svg'
-        } as skill,
+            src: drawables.sass
+        } as Skill,
         skill9: {
             skill: 'Node.js',
-            src: '/src/assets/svg/nodejs.svg'
-        } as skill,
+            src: drawables.nodejs
+        } as Skill,
     })
 
     watch(locale,() => {
@@ -101,7 +114,7 @@ export const useSkillStore = defineStore('skill' ,() => {
     return { content }
 })
 
-interface skill {
+interface Skill {
     skill: string,
     src: string
 }

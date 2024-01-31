@@ -58,13 +58,15 @@ h1 {
   background: -webkit-linear-gradient(right, var(--color-navbar), var(--pt-c-dark-blue-2));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  white-space: nowrap;
 }
 h2 {
   font-size: 2em;
 }
 .hero-flex-item {
-  max-width: 50%;
+  max-width: 60%;
   margin: auto;
+  align-items: center;
 }
 .action-btn-wrapper {
   display: flex;
@@ -73,7 +75,19 @@ h2 {
   justify-content: center;
 }
 
+@media (max-width: 1200px) {
+  h1 {
+    white-space: inherit;
+  }
+}
+
 @media (max-width: $media-size) {
+  h1 {
+    text-align: center;
+  }
+  h2 {
+    text-align: center;
+  }
   .content {
     flex-direction: column;
     margin-left: 2%;

@@ -85,15 +85,24 @@ export default defineComponent({
     display: flex;
     flex-direction: row;
     list-style: none;
-    margin-top: 0.5em;
-    justify-self: center;
-    align-items: center;
+    justify-content: center;
 
     li {
-      margin: auto;
       width: fit-content;
+      height: 100%;
+      display: inline-flex;
+
+      transition: background-color 0.1s;
+      &:hover {
+        background-color: var(--color-background);
+        .text-body {
+          fill: var(--color-text);
+        }
+      }
       a {
         font-size: 1.5em;
+        top: 7%;
+        margin-top: 25px;
       }
     }
   }
@@ -101,16 +110,15 @@ export default defineComponent({
 
 .text-body {
   fill: var(--color-text-nav);
-  stroke: var(--color-text-nav);
+  stroke: var(--color-text);
   stroke-dashoffset: 0%;
   stroke-dasharray: 0% 50%;
   animation: 0.5s linear normal animate-stroke-out;
-}
-
-.text-body:hover {
-  animation-name: animate-stroke-in;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
+  &:hover {
+    animation-name: animate-stroke-in;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+  }
 }
 
 svg {
@@ -221,6 +229,7 @@ svg text {
     position: absolute;
     bottom: 7px;
     left: 4px;
+    border-radius: 3px;
     transform-origin: -1px 6px;
     animation-name: animate-menu-bar-1-reversed;
     animation-duration: $bar-btn-animation-duration;
@@ -233,6 +242,7 @@ svg text {
     position: absolute;
     top: -2px;
     left: 4px;
+    border-radius: 3px;
     animation-name: animate-menu-bar-2-reversed;
     animation-duration: $bar-btn-animation-duration;
     animation-timing-function: linear;
@@ -244,6 +254,7 @@ svg text {
     position: absolute;
     top: 7px;
     left: 4px;
+    border-radius: 3px;
     transform-origin: -1px -2px;
     animation-name: animate-menu-bar-3-reversed;
     animation-duration: $bar-btn-animation-duration;

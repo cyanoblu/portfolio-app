@@ -18,14 +18,14 @@ export const useHeroStore = defineStore('hero', () => {
         const eng = ref({
             greeting: {
                 intro: "Hi, i'm ",
-                title: "Raphael", 
+                title: "Raphael Barbosa", 
                 subtitle: "I'm a developer"
             } as Greeting
         })
         const ptbr = ref({
             greeting: {
                 intro: "Olá, me chamo ",
-                title: "Raphael",
+                title: "Raphael Barbosa",
                 subtitle: "Sou desenvolvedor"
             } as Greeting
         })
