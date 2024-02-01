@@ -7,7 +7,7 @@
       <section id="about"><AboutView /></section>
       <section id="experience"><ExpView /></section>
       <section id="skills"><SkillView /></section>
-      <section id="projects"></section>
+      <section id="projects"><ProjectView /></section>
     </main>
     <footer></footer>
   </div>
@@ -22,6 +22,7 @@ import HeroView from '@/views/HeroView.vue'
 import AboutView from '@/views/AboutView.vue'
 import ExpView from '@/views/ExperienceView.vue'
 import SkillView from '@/views/SkillView.vue'
+import ProjectView from '@/views/ProjectView.vue'
 //Components
 import NavBar from '@/components/ui/NavBar.vue'
 //Stores
@@ -33,7 +34,8 @@ export default defineComponent({
     HeroView,
     AboutView,
     ExpView,
-    SkillView
+    SkillView,
+    ProjectView
   },
 
   setup() {
