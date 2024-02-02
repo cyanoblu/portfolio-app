@@ -74,10 +74,9 @@ export default defineComponent({
 
 .navbar-wrapper {
   background-color: var(--color-navbar);
-  position: absolute;
-  margin-left: -50%;
-  width: 100%;
+  width: 100dvw;
   height: 75px;
+  margin: auto;
   display: grid;
   transition: height 0.3s ease;
 

@@ -1,17 +1,13 @@
 <template>
-  <div></div>
-  <div class="commom">
-    <header><NavBar /></header>
-    <main>
-      <section id="hero"><HeroView /></section>
-      <section id="about"><AboutView /></section>
-      <section id="experience"><ExpView /></section>
-      <section id="skills"><SkillView /></section>
-      <section id="projects"><ProjectView /></section>
-    </main>
-    <footer></footer>
-  </div>
-  <div></div>
+  <header><NavBar id="navbar" /></header>
+  <main>
+    <section id="hero"><HeroView /></section>
+    <section id="about"><AboutView /></section>
+    <section id="experience"><ExpView /></section>
+    <section id="skills"><SkillView /></section>
+    <section id="projects"><ProjectView /></section>
+  </main>
+  <footer></footer>
 </template>
 
 <script lang="ts">
@@ -48,19 +44,13 @@ export default defineComponent({
   }
 })
 </script>
-<style scoped>
-.commom {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+<style scoped lang="scss">
+#navbar {
+  position: fixed;
+  margin-left: inherit;
 }
 
 #about {
   background-color: var(--color-section-about);
-}
-
-#experience {
-  width: 100%;
-  /* background-color: var(--color-section-exp); */
 }
 </style>

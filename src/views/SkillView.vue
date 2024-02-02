@@ -37,6 +37,7 @@ export default defineComponent({
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
+  overflow: scroll;
 }
 
 .skill {
