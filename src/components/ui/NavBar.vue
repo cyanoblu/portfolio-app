@@ -75,10 +75,12 @@ export default defineComponent({
 .navbar-wrapper {
   background-color: var(--color-navbar);
   width: 100dvw;
+  left: 0;
   height: 75px;
   margin: auto;
   display: grid;
   transition: height 0.3s ease;
+  z-index: 999;
 
   .navbar-list {
     display: flex;

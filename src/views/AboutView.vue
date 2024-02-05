@@ -4,19 +4,25 @@
       <h2>{{ useAbout.content.about.title }}</h2>
     </div>
     <div class="about-flex-item">
-      <p>{{ useAbout.content.about.p1 }}</p>
       <p>
+        {{ useAbout.content.about.p1 }}
+        <a class="emphasis" disabled>{{ useAbout.content.about.emphasis1 }}</a>
+        {{ useAbout.content.about.conjunction }}
+        <a class="emphasis" disabled>{{ useAbout.content.about.emphasis2 }}</a>
         {{ useAbout.content.about.p2 }}
-        <a href="https://vuejs.org/" class="emphasis emph1" target="_blank">{{
-          useAbout.content.about.emphasis1
+      </p>
+      <p>
+        {{ useAbout.content.about.p3 }}
+        <a href="https://vuejs.org/" class="emphasis emph3" target="_blank">{{
+          useAbout.content.about.emphasis3
         }}</a>
         {{ useAbout.content.about.conjunction }}
-        <a href="https://apexcharts.com/" class="emphasis emph2" target="_blank">{{
-          useAbout.content.about.emphasis2
+        <a href="https://apexcharts.com/" class="emphasis emph4" target="_blank">{{
+          useAbout.content.about.emphasis4
         }}</a
         >.
       </p>
-      <p>{{ useAbout.content.about.p3 }}</p>
+      <p>{{ useAbout.content.about.p4 }}</p>
     </div>
   </div>
 </template>
@@ -58,13 +64,14 @@ h2 {
 
 .emphasis {
   font-family: Gilroy;
+  color: var(--pt-c-primary-color);
 }
 
-.emph1 {
+.emph3 {
   color: var(--color-text-emph-vue);
 }
 
-.emph2 {
+.emph4 {
   color: var(--pt-c-text-apexcharts);
 }
 

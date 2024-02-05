@@ -15,16 +15,18 @@ export const useAboutStore = defineStore( 'about', () => {
         about : {
             title: 'Sobre',
             conjunction: 'e',
-            emphasis1: 'Vue3',
-            emphasis2: 'ApexCharts',
-            p1: `Sou analista de desenvolvimento e desenvolvedor web, com 2 anos de experiência no setor
-            entregando soluções personalizadas para diferentes negócios.`,
-            p2: `Participei ativamente no desenho e desenvolvimento de interfaces para avaliação de métricas
+            emphasis1: 'analista de desenvolvimento',
+            emphasis2: 'desenvolvedor web',
+            emphasis3: 'Vue',
+            emphasis4: 'ApexCharts',
+            p1: 'Sou ',
+            p2: ` com 2 anos de experiência no setor entregando soluções personalizadas para diferentes negócios.`,
+            p3: `Participei ativamente no desenho e desenvolvimento de interfaces para avaliação de métricas
             e análise de dados utilizando `,
-            p3: `Integrando soluções personalizadas no ERP
+            p4: `Integrando soluções personalizadas no ERP
             Sankhya além de outros projetos que abrangem desde automação de coleta de dados com Python a
             análise processual em UML.`,
-            p4: `Atualmente, busco aprimorar meus conhecimentos em desenvolvimento web atingindo todos os
+            p5: `Atualmente, busco aprimorar meus conhecimentos em desenvolvimento web atingindo todos os
             níveis do processo com forte afinidade em front end.`,
         } as About
     })
@@ -32,9 +34,16 @@ export const useAboutStore = defineStore( 'about', () => {
     const eng = ref({
         about : {
             title: 'About me',
-            p1: '',
-            p2: '',
+            conjunction: 'and',
+            emphasis1: 'development analyst',
+            emphasis2: 'web developer',
+            emphasis3: 'Vue',
+            emphasis4: 'ApexCharts',
+            p1: 'I am a ',
+            p2: ` with 2 years of experience in the sector delivering customized solutions for different businesses.`,
             p3: '',
+            p4: '',
+            p5: '',
         } as About })
 
     watch(locale,() => {
@@ -54,6 +63,8 @@ interface About {
     conjunction: string,
     emphasis1: string,
     emphasis2: string,
+    emphasis3: string,
+    emphasis4: string,
     p1: string,
     p2: string,
     p3: string,

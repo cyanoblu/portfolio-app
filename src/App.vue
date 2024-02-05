@@ -47,7 +47,6 @@ export default defineComponent({
 <style scoped lang="scss">
 #navbar {
   position: fixed;
-  margin-left: inherit;
 }
 
 #about {

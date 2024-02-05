@@ -1,5 +1,6 @@
 <template>
   <div class="content">
+    <h2>{{ useApp.content.sectionTitle.projects }}</h2>
     <div class="project-card-wrapper">
       <div v-for="project in useProject.content" :key="project.project" class="project">
         <Card
@@ -16,6 +17,7 @@
 import { defineComponent } from 'vue'
 import Card from '@/components/data/DataCard.vue'
 import { useProjectStore } from '@/stores/ProjectStore'
+import { useAppStore } from '@/stores/AppStore'
 
 export default defineComponent({
   components: {
@@ -23,26 +25,35 @@ export default defineComponent({
   },
   setup() {
     const useProject = useProjectStore()
+    const useApp = useAppStore()
 
-    return { useProject }
+    return { useProject, useApp }
   }
 })
 </script>
-<style lang="scss">
+<style scoped lang="scss">
 @import '../assets/variables.scss';
 .content {
-  height: var(--content-height);
-  max-height: var(--content-max-height);
+  height: auto;
   min-height: var(--content-min-height);
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .project-card-wrapper {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
-  overflow-x: scroll;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: baseline;
+}
+
+h2 {
+  align-self: center;
+  margin: 30px;
+  font-size: 2em;
+  margin-bottom: 70px;
+  margin-right: 70px;
 }
 </style>

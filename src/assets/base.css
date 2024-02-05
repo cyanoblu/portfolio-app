@@ -33,7 +33,6 @@
   --pt-c-text-vue-dark: #42b883;
   --pt-c-text-apexcharts: #008ffb;
 
-
   --media-size: 700px;
   --content-height: 100dvh;
   --content-min-height: 500px;
@@ -51,6 +50,7 @@
 
   --color-heading: var(--vt-c-text-light-1);
   --color-text: var(--vt-c-text-light-1);
+  --pt-c-text-emphasis: var(--pt-c-dark-blue-2);
   --color-text-emph-vue: var(--pt-c-text-vue-light);
 
   --color-text-nav: var(--vt-c-text-light-2);
@@ -73,6 +73,7 @@
 
     --color-heading: var(--vt-c-text-dark-1);
     --color-text: var(--vt-c-text-dark-1);
+    --pt-c-text-emphasis: var(--pt-c-primary-color);
     --color-text-emph-vue: var(--pt-c-text-vue-dark);
 
     --color-text-nav: var(--vt-c-text-dark-2);
