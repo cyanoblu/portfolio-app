@@ -40,10 +40,10 @@ export const useAboutStore = defineStore( 'about', () => {
             emphasis3: 'Vue',
             emphasis4: 'ApexCharts',
             p1: 'I am a ',
-            p2: ` with 2 years of experience in the sector delivering customized solutions for different businesses.`,
-            p3: '',
-            p4: '',
-            p5: '',
+            p2: ' with 2 years of experience in the sector delivering customized solutions for different businesses.',
+            p3: 'I actively participated in the design and development of interfaces for metric evaluation and data analysis using',
+            p4: 'Integrating customized solutions into the ERP Sankhya, as well as other projects ranging from data collection automation with Python to process analysis in UML.',
+            p5: 'Currently, I seek to enhance my knowledge in web development, reaching all levels of the process with a strong affinity for front-end.',
         } as About })
 
     watch(locale,() => {

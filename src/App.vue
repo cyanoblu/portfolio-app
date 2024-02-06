@@ -2,6 +2,7 @@
   <header><NavBar id="navbar" /></header>
   <main>
     <section id="hero"><HeroView /></section>
+    <div class="box"></div>
     <section id="about"><AboutView /></section>
     <section id="experience"><ExpView /></section>
     <section id="skills"><SkillView /></section>
@@ -23,6 +24,8 @@ import ProjectView from '@/views/ProjectView.vue'
 import NavBar from '@/components/ui/NavBar.vue'
 //Stores
 import { useAppStore } from './stores/AppStore'
+//Libs
+import animate from '@/assets/animations/gsap.ts'
 
 export default defineComponent({
   components: {
@@ -39,6 +42,7 @@ export default defineComponent({
     onMounted(() => {
       // TODO: setup language based on location. if [br, pt, ...] ? 'pt-br' : 'eng'
       useStore.locale = 'pt-br'
+      animate('.box')
     })
     return {}
   }
@@ -52,4 +56,11 @@ export default defineComponent({
 #about {
   background-color: var(--color-section-about);
 }
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+}
 </style>
+@/assets/animation/gsap @/assets/animations/gsap
