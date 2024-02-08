@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar-wrapper" :class="{ toggle: toggleOn }">
+  <nav id="navbar" class="navbar-wrapper" :class="{ toggle: toggleOn }">
     <button id="toggle-btn" @click="toggleCollapse">
       <div id="btn-bar-container">
         <div id="btn-bar-1"></div>
@@ -49,8 +49,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
+import { defineComponent, ref, onMounted } from 'vue'
 import { useAppStore } from '@/stores/AppStore'
+import { watchNavbar } from '@/assets/animations/gsap'
 
 export default defineComponent({
   components: {},
@@ -58,6 +59,10 @@ export default defineComponent({
     const useStore = useAppStore()
     const isCollapsed = ref(true)
     const toggleOn = ref(false)
+
+    onMounted(() => {
+      watchNavbar('#navbar')
+    })
 
     function toggleCollapse() {
       isCollapsed.value === true ? (isCollapsed.value = false) : (isCollapsed.value = true)
@@ -69,9 +74,11 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 @import '../../assets/variables.scss';
-
+#navbar {
+  position: fixed;
+}
 .navbar-wrapper {
   background-color: var(--color-navbar);
   width: 100dvw;
@@ -79,7 +86,9 @@ export default defineComponent({
   height: 75px;
   margin: auto;
   display: grid;
-  transition: height 0.3s ease;
+  transition:
+    height 0.3s ease,
+    background-color 0.3s ease;
   z-index: 999;
 
   .navbar-list {
@@ -92,6 +101,7 @@ export default defineComponent({
       width: fit-content;
       height: 100%;
       display: inline-flex;
+      justify-content: center;
 
       transition: background-color 0.1s;
       &:hover {
@@ -119,6 +129,24 @@ export default defineComponent({
     animation-name: animate-stroke-in;
     animation-duration: 1s;
     animation-fill-mode: forwards;
+  }
+}
+
+.toggle-transparency {
+  background-color: transparent;
+  backdrop-filter: blur(6.3px);
+  .text-body {
+    fill: var(--color-text);
+  }
+  .navbar-list {
+    li {
+      &:hover {
+        background-color: var(--color-navbar);
+        .text-body {
+          fill: var(--color-text-nav);
+        }
+      }
+    }
   }
 }
 
@@ -211,10 +239,13 @@ svg text {
   }
   .navbar-list {
     flex-direction: column !important;
+    li {
+      margin: auto;
+    }
   }
   #toggle-btn {
     display: inline;
-    background-color: transparent;
+    background-color: var(--color-navbar);
     margin-left: 4px;
 
     #btn-bar-container {

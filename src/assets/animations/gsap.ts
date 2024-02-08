@@ -5,13 +5,22 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-console.log('gsap on')
-const animate = (element: string) => {
-  console.log('element captured: ', element)
-  gsap.to(element, {
-    scrollTrigger: element, // start animation when ".box" enters the viewport
-    x: 500,
-  });
+const watchNavbar = (element: string) => {
+  const domElement = document.getElementById(element.substring(1))
+  gsap.to((element), {
+    scrollTrigger: {
+      trigger: element,
+      /* markers: true, */
+      start: '100px',
+      onEnter: () => {
+        domElement?.classList.add('toggle-transparency')
+      },
+      onEnterBack: () => {
+        domElement?.classList.remove('toggle-transparency')
+      }
+    }
+  })
+
 }
 
-export default animate
+export { watchNavbar }
