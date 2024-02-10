@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <div class="about-flex-item">
-      <h2>{{ useAbout.content.about.title }}</h2>
+      <h2>{{ useApp.content.sectionTitle.about }}</h2>
     </div>
     <div class="about-flex-item">
       <p>
@@ -30,11 +30,13 @@
 <script lang="ts">
 import { defineComponent } from 'vue'
 import { useAboutStore } from '@/stores/AboutStore'
+import { useAppStore } from '@/stores/AppStore'
 
 export default defineComponent({
   setup() {
     const useAbout = useAboutStore()
-    return { useAbout }
+    const useApp = useAppStore()
+    return { useAbout, useApp }
   }
 })
 </script>
