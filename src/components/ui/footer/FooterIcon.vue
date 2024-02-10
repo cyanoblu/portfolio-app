@@ -13,7 +13,6 @@
         <path :d="props.icon"></path>
       </g>
     </svg>
-    <div>{{ props.description }}</div>
   </button>
 </template>
 <script lang="ts">
@@ -21,7 +20,6 @@ import { defineComponent } from 'vue'
 
 export default defineComponent({
   props: {
-    description: String,
     url: String,
     icon: String,
     disabled: Boolean
@@ -38,36 +36,30 @@ export default defineComponent({
 .btn-action {
   background-color: transparent;
   color: var(--color-text);
-  border-color: var(--color-text);
+  border-color: transparent;
   border-style: solid;
   border-radius: 5px;
-  border-width: 2px;
   font-family: Gilroy-light;
   font-size: 1.2em;
-  min-width: 8em;
+  min-width: 4em;
   height: 3em;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  margin: 10px;
+  margin: 5px;
 
   svg {
-    width: 30px;
-    fill: var(--color-text);
-  }
-
-  img {
-    border-radius: 5px;
-    background-color: var(--vt-c-white);
+    width: 35px;
+    height: 35px;
+    fill: var(--color-text-footer);
   }
 
   &:hover {
-    color: var(--color-navbar);
-    border-color: var(--color-navbar);
+    color: var(--color-text-footer-hover);
 
     svg {
-      fill: var(--color-navbar);
+      fill: var(--color-text-footer-hover);
     }
   }
 }

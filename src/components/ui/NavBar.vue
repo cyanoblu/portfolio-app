@@ -1,5 +1,5 @@
 <template>
-  <nav id="navbar" class="navbar-wrapper" :class="{ toggle: toggleOn }">
+  <nav id="navbar" class="navbar-wrapper transparency" :class="{ toggle: toggleOn }">
     <button id="toggle-btn" @click="toggleCollapse">
       <div id="btn-bar-container">
         <div id="btn-bar-1"></div>
@@ -73,6 +73,7 @@ export default defineComponent({
       watchSection('#navExp', '#experience')
       watchSection('#navSkills', '#skills')
       watchSection('#navProjects', '#projects')
+      removeTransparency('navbar')
     })
 
     function toggleCollapse() {
@@ -83,6 +84,11 @@ export default defineComponent({
     function navbarClickHandler(elementId: string) {
       const element = document.getElementById(elementId)
       if (element) element.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' })
+    }
+
+    function removeTransparency(elementId: string) {
+      const element = document.getElementById(elementId)
+      element?.classList.remove('transparency')
     }
 
     return { useStore, isCollapsed, toggleOn, toggleCollapse, navbarClickHandler }
@@ -148,7 +154,7 @@ export default defineComponent({
   }
 }
 
-.toggle-transparency {
+.transparency {
   background-color: transparent;
   backdrop-filter: blur(6.3px);
   .text-body {

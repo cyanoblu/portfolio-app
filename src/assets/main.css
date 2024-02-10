@@ -4,7 +4,7 @@
   max-width: 1280px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 10fr 1fr;
+  grid-template-columns: 10fr;
 }
 
 @media (max-width: var(--media-size)) {

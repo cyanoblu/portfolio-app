@@ -13,10 +13,10 @@ const watchNavbar = (element: string) => {
       /* markers: true, */
       start: '100px',
       onEnter: () => {
-        domElement?.classList.add('toggle-transparency')
+        domElement?.classList.add('transparency')
       },
       onEnterBack: () => {
-        domElement?.classList.remove('toggle-transparency')
+        domElement?.classList.remove('transparency')
       }
     }
   })

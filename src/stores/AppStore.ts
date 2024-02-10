@@ -7,7 +7,8 @@ export const useAppStore = defineStore('app', () => {
 
     const content = ref({
         navbar: {} as NavbarHeader,
-        sectionTitle: {} as SectionHeader
+        sectionTitle: {} as SectionHeader,
+        footer: {} as FooterContent
     })
 
     const ptbr = ref({
@@ -22,7 +23,10 @@ export const useAppStore = defineStore('app', () => {
             experience: 'Experiência',
             skills: 'Habilidades',
             projects: 'Projetos'
-        } as SectionHeader
+        } as SectionHeader,
+        footer: {
+            copyright: 'todos os direitos reservados.'
+        } as FooterContent
     })
 
     const eng = ref ({
@@ -37,7 +41,10 @@ export const useAppStore = defineStore('app', () => {
             experience: 'Experience',
             skills: 'Skills',
             projects: 'Projects'
-        } as SectionHeader
+        } as SectionHeader,
+        footer: {
+            copyright: 'all rights reserved.'
+        } as FooterContent
     })
 
     function toggleLocale() {
@@ -68,4 +75,8 @@ interface SectionHeader {
     experience: string,
     skills: string,
     projects: string
+}
+
+interface FooterContent {
+    copyright: string
 }

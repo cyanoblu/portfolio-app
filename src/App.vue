@@ -7,7 +7,7 @@
     <section id="skills"><SkillView /></section>
     <section id="projects"><ProjectView /></section>
   </main>
-  <footer></footer>
+  <footer><UiFooter /></footer>
 </template>
 
 <script lang="ts">
@@ -21,6 +21,7 @@ import SkillView from '@/views/SkillView.vue'
 import ProjectView from '@/views/ProjectView.vue'
 //Components
 import NavBar from '@/components/ui/NavBar.vue'
+import UiFooter from '@/components/ui/footer/FooterBase.vue'
 //Stores
 import { useAppStore } from './stores/AppStore'
 
@@ -31,7 +32,8 @@ export default defineComponent({
     AboutView,
     ExpView,
     SkillView,
-    ProjectView
+    ProjectView,
+    UiFooter
   },
 
   setup() {
@@ -47,11 +49,5 @@ export default defineComponent({
 <style scoped lang="scss">
 #about {
   background-color: var(--color-section-about);
-}
-
-.box {
-  width: 100px;
-  height: 100px;
-  background-color: blue;
 }
 </style>

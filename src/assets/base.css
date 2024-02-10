@@ -55,6 +55,9 @@
 
   --color-text-nav: var(--vt-c-text-light-2);
   --color-navbar: var(--pt-c-dark-blue);
+  --color-footer: var(--pt-c-dark-blue);
+  --color-text-footer: var(--vt-c-white-soft);
+  --color-text-footer-hover: var(--vt-c-black-soft);
 
   --color-section-about: var(--pt-c-dark-blue);
   --color-section-exp: var(--pt-c-complementary-2);
@@ -78,6 +81,9 @@
 
     --color-text-nav: var(--vt-c-text-dark-2);
     --color-navbar: var(--pt-c-primary-color);
+    --color-footer: var(--pt-c-primary-color);
+    --color-text-footer: var(--vt-c-black-soft);
+    --color-text-footer-hover: var(--vt-c-white-soft);
 
     --color-section-about: transparent;
     --color-section-exp: transparent;
