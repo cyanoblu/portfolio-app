@@ -12,15 +12,15 @@ export const useSkillStore = defineStore('skill' ,() => {
     })
 
     const drawables = {
-        javascript: '/src/assets/svg/javascript.svg',
-        typescript: '/src/assets/svg/typescript.svg',
-        python: '/src/assets/svg/python.svg',
-        html: '/src/assets/svg/html.svg',
-        css: '/src/assets/svg/css.svg',
-        oracle: '/src/assets/svg/oracle.svg',
-        vue: '/src/assets/svg/vue.svg',
-        sass: '/src/assets/svg/sass.svg',
-        nodejs: '/src/assets/svg/nodejs.svg'
+        javascript: './assets/svg/javascript.svg',
+        typescript: './assets/svg/typescript.svg',
+        python: './assets/svg/python.svg',
+        html: './assets/svg/html.svg',
+        css: './assets/svg/css.svg',
+        oracle: './assets/svg/oracle.svg',
+        vue: './assets/svg/vue.svg',
+        sass: './assets/svg/sass.svg',
+        nodejs: './assets/svg/nodejs.svg'
 
     }
 
