@@ -55,13 +55,16 @@ footer {
 .footer-wrapper {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
   width: 100%;
   max-width: 1280px;
 }
 .left-row {
   width: 50%;
   max-width: 50%;
+  min-width: 250px;
+  height: fit-content;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -69,9 +72,11 @@ footer {
 .right-row {
   width: 50%;
   max-width: 50%;
+  min-width: 250px;
+  height: fit-content;
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
 }
 
 h3 {

@@ -38,7 +38,7 @@ export default defineComponent({
 .btn-action {
   background-color: transparent;
   color: var(--color-text);
-  border-color: var(--color-text);
+  border-color: transparent;
   border-style: solid;
   border-radius: 5px;
   border-width: 2px;
@@ -57,17 +57,12 @@ export default defineComponent({
     fill: var(--color-text);
   }
 
-  img {
-    border-radius: 5px;
-    background-color: var(--vt-c-white);
-  }
-
   &:hover {
     color: var(--color-navbar);
-    border-color: var(--color-navbar);
 
     svg {
       fill: var(--color-navbar);
+      filter: drop-shadow(1px 1px 3px var(--color-navbar));
     }
   }
 }

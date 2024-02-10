@@ -111,7 +111,7 @@ h2 {
   }
 
   .utility {
-    top: 40%;
+    top: 45%;
   }
 }
 </style>
