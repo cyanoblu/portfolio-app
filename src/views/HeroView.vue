@@ -1,5 +1,6 @@
 <template>
   <div class="content">
+    <RoundUtilButton class="utility" :description="useApp.locale" :action="useApp.toggleLocale" />
     <div class="hero-flex-item">
       <h2>{{ useHero.content.greeting.intro }}</h2>
       <h1>{{ useHero.content.greeting.title }}</h1>
@@ -31,14 +32,18 @@
 import { defineComponent } from 'vue'
 import { useHeroStore } from '@/stores/HeroStore'
 import ActionButton from '@/components/ui/ActionButton.vue'
+import RoundUtilButton from '@/components/ui/RoundUtilButton.vue'
+import { useAppStore } from '@/stores/AppStore'
 
 export default defineComponent({
   components: {
-    ActionButton
+    ActionButton,
+    RoundUtilButton
   },
   setup() {
     const useHero = useHeroStore()
-    return { useHero }
+    const useApp = useAppStore()
+    return { useHero, useApp }
   }
 })
 </script>
@@ -75,6 +80,12 @@ h2 {
   justify-content: center;
 }
 
+.utility {
+  position: absolute;
+  top: 80px;
+  right: 2%;
+}
+
 @media (max-width: 1200px) {
   h1 {
     white-space: inherit;
@@ -97,6 +108,10 @@ h2 {
   .hero-flex-item {
     max-width: 95%;
     margin: auto;
+  }
+
+  .utility {
+    top: 40%;
   }
 }
 </style>

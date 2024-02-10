@@ -40,6 +40,10 @@ export const useAppStore = defineStore('app', () => {
         } as SectionHeader
     })
 
+    function toggleLocale() {
+        locale.value === 'pt-br' ? locale.value = 'eng' : locale.value = 'pt-br';
+    }
+
     watch(locale,() => {
         if (locale.value === "pt-br") {
             content.value = ptbr.value
@@ -49,7 +53,7 @@ export const useAppStore = defineStore('app', () => {
         }
     })
 
-    return {locale, content}
+    return {locale, content, toggleLocale}
 })
 
 interface NavbarHeader {

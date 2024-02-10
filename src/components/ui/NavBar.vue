@@ -9,36 +9,43 @@
     </button>
     <ul :class="{ collapsed: isCollapsed }" class="navbar-list">
       <li>
-        <a href=""
+        <a @click="navbarClickHandler('about')"
           ><svg>
-            <text x="50%" y="50%" dy=".32rem" text-anchor="middle" class="text-body">
+            <text id="navAbout" x="50%" y="50%" dy=".32rem" text-anchor="middle" class="text-body">
               {{ useStore.content.navbar.about }}
             </text>
           </svg></a
         >
       </li>
       <li>
-        <a href=""
+        <a @click="navbarClickHandler('experience')"
           ><svg>
-            <text x="50%" y="50%" dy=".32rem" text-anchor="middle" class="text-body">
+            <text id="navExp" x="50%" y="50%" dy=".32rem" text-anchor="middle" class="text-body">
               {{ useStore.content.navbar.experience }}
             </text>
           </svg></a
         >
       </li>
       <li>
-        <a href=""
+        <a @click="navbarClickHandler('skills')"
           ><svg>
-            <text x="50%" y="50%" dy=".32rem" text-anchor="middle" class="text-body">
+            <text id="navSkills" x="50%" y="50%" dy=".32rem" text-anchor="middle" class="text-body">
               {{ useStore.content.navbar.skills }}
             </text>
           </svg></a
         >
       </li>
       <li>
-        <a href=""
+        <a @click="navbarClickHandler('projects')"
           ><svg>
-            <text x="50%" y="50%" dy=".32rem" text-anchor="middle" class="text-body">
+            <text
+              id="navProjects"
+              x="50%"
+              y="50%"
+              dy=".32rem"
+              text-anchor="middle"
+              class="text-body"
+            >
               {{ useStore.content.navbar.projects }}
             </text>
           </svg></a
@@ -51,7 +58,7 @@
 <script lang="ts">
 import { defineComponent, ref, onMounted } from 'vue'
 import { useAppStore } from '@/stores/AppStore'
-import { watchNavbar } from '@/assets/animations/gsap'
+import { watchNavbar, watchSection } from '@/components/animations/gsap'
 
 export default defineComponent({
   components: {},
@@ -62,6 +69,10 @@ export default defineComponent({
 
     onMounted(() => {
       watchNavbar('#navbar')
+      watchSection('#navAbout', '#about')
+      watchSection('#navExp', '#experience')
+      watchSection('#navSkills', '#skills')
+      watchSection('#navProjects', '#projects')
     })
 
     function toggleCollapse() {
@@ -69,7 +80,12 @@ export default defineComponent({
       toggleOn.value === true ? (toggleOn.value = false) : (toggleOn.value = true)
     }
 
-    return { useStore, isCollapsed, toggleOn, toggleCollapse }
+    function navbarClickHandler(elementId: string) {
+      const element = document.getElementById(elementId)
+      if (element) element.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' })
+    }
+
+    return { useStore, isCollapsed, toggleOn, toggleCollapse, navbarClickHandler }
   }
 })
 </script>
@@ -125,7 +141,7 @@ export default defineComponent({
   stroke-dashoffset: 0%;
   stroke-dasharray: 0% 50%;
   animation: 0.5s linear normal animate-stroke-out;
-  &:hover {
+  &.active {
     animation-name: animate-stroke-in;
     animation-duration: 1s;
     animation-fill-mode: forwards;
@@ -137,6 +153,7 @@ export default defineComponent({
   backdrop-filter: blur(6.3px);
   .text-body {
     fill: var(--color-text);
+    stroke: var(--color-text);
   }
   .navbar-list {
     li {
@@ -144,6 +161,7 @@ export default defineComponent({
         background-color: var(--color-navbar);
         .text-body {
           fill: var(--color-text-nav);
+          stroke: var(--color-text-nav);
         }
       }
     }
@@ -181,6 +199,9 @@ svg text {
     stroke-dashoffset: 25%;
     fill: transparent;
     stroke-dasharray: 50% 0%;
+  }
+  20% {
+    fill: transparent;
   }
   100% {
     stroke-dashoffset: 0%;

@@ -66,5 +66,6 @@ export default defineComponent({
 
 h2 {
   font-size: 2em;
+  min-width: 100px;
 }
 </style>
