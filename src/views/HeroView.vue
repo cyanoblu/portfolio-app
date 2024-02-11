@@ -59,7 +59,7 @@ export default defineComponent({
 }
 h1 {
   font-size: 5em;
-  font-family: Gilroy;
+  font-family: Poppins-ExtraBold;
   background: -webkit-linear-gradient(right, var(--color-navbar), var(--pt-c-dark-blue-2));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

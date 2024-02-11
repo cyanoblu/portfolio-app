@@ -111,7 +111,8 @@ body {
     color 0.5s,
     background-color 0.5s;
   line-height: 1.2;
-  font-family: Gilroy-Light;
+  font-family: Poppins-ExtraLight;
+  font-weight: 100;
   font-size: 15px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -123,21 +124,38 @@ a{
 }
 
 @font-face {
-  font-family: 'Gilroy-Light';
-  src: url('@/assets/fonts/Gilroy-Light.woff2') format('woff2'),
-      url('@/assets/fonts/Gilroy-Light.woff') format('woff');
-  font-weight: 300;
+  font-family: 'Poppins-Thin';
+  src: url('@/assets/fonts/Poppins/Poppins-Thin.ttf') format('truetype');
+  font-weight: 100;
   font-style: normal;
-  font-display: swap;
 }
 
 @font-face {
-  font-family: 'Gilroy';
-  src: url('@/assets/fonts/Gilroy-ExtraBold.woff2') format('woff2'),
-      url('@/assets/fonts/Gilroy-ExtraBold.woff') format('woff');
-  font-weight: bold;
+  font-family: 'Poppins-ExtraLight';
+  src: url('@/assets/fonts/Poppins/Poppins-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
   font-style: normal;
-  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins-Regular';
+  src: url('@/assets/fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins-Bold';
+  src: url('@/assets/fonts/Poppins/Poppins-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins-ExtraBold';
+  src: url('@/assets/fonts/Poppins/Poppins-ExtraBold.ttf') format('truetype');
+  font-weight: bolder;
+  font-style: normal;
 }
 
 /* SCROLLBAR CUSTOMIZATION */

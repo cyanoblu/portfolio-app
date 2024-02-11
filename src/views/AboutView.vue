@@ -65,7 +65,7 @@ h2 {
 }
 
 .emphasis {
-  font-family: Gilroy;
+  font-family: Poppins-Bold;
   color: var(--pt-c-primary-color);
 }
 

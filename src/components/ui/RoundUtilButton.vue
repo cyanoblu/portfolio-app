@@ -23,7 +23,7 @@ export default defineComponent({
   border-style: solid;
   border-radius: 50px;
   border-width: 2px;
-  font-family: Gilroy-light;
+  font-family: Poppins-ExtraLight;
   font-size: 1em;
   width: 5em;
   min-width: fit-content;

@@ -71,6 +71,7 @@ footer {
   justify-content: flex-start;
 }
 .right-row {
+  font-family: Poppins-Regular;
   width: 50%;
   max-width: 50%;
   min-width: 250px;

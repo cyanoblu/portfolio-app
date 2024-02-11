@@ -29,7 +29,7 @@ export default defineComponent({
 @import '../../assets/variables.scss';
 
 h3 {
-  font-family: Gilroy;
+  font-family: Poppins-Bold;
   color: var(--color-navbar);
 }
 .card {

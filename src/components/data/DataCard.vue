@@ -45,7 +45,7 @@ export default defineComponent({
   }
 
   h3 {
-    font-family: Gilroy;
+    font-family: Poppins-Bold;
     padding: 25px;
   }
 

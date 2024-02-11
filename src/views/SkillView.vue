@@ -41,7 +41,7 @@ export default defineComponent({
 }
 
 .skill {
-  font-family: Gilroy;
+  font-family: Poppins-Bold;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
