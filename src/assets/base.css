@@ -98,7 +98,12 @@
   font-weight: normal;
 }
 
+html{
+  max-width: 100dvw;
+}
+
 body {
+  
   min-height: 100vh;
   color: var(--color-text);
   background-color: var(--color-background);
@@ -118,11 +123,51 @@ a{
 }
 
 @font-face {
-  font-family: Gilroy;
-  src: url('@/assets/fonts/Gilroy-ExtraBold.otf') format("opentype");
+  font-family: 'Gilroy-Light';
+  src: url('@/assets/fonts/Gilroy-Light.woff2') format('woff2'),
+      url('@/assets/fonts/Gilroy-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-  font-family: Gilroy-Light;
-  src: url('@/assets/fonts/Gilroy-Light.otf') format("opentype");
+  font-family: 'Gilroy';
+  src: url('@/assets/fonts/Gilroy-ExtraBold.woff2') format('woff2'),
+      url('@/assets/fonts/Gilroy-ExtraBold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
 }
+
+/* SCROLLBAR CUSTOMIZATION */
+
+body {
+  --sb-track-color: #232e33;
+  --sb-thumb-color: #0396a6;
+  --sb-size: 14px;
+}
+
+body::-webkit-scrollbar {
+  width: var(--sb-size)
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 3px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 3px;
+  
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  body {
+    scrollbar-color: var(--sb-thumb-color)
+                     var(--sb-track-color);
+  }
+}
+
+/* ---------- */

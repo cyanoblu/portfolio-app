@@ -43,7 +43,7 @@ export default defineComponent({
 footer {
   color: var(--color-text-footer);
   height: 300px;
-  width: 100dvw;
+  width: 100%;
   position: absolute;
   display: flex;
   flex-direction: row;
@@ -51,6 +51,7 @@ footer {
   left: 0;
   background-color: var(--color-footer);
   margin-top: 200px;
+  overflow: hidden;
 }
 .footer-wrapper {
   display: flex;
