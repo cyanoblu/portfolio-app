@@ -19,14 +19,14 @@ export const useHeroStore = defineStore('hero', () => {
             greeting: {
                 intro: "Hi, i'm ",
                 title: "Raphael Barbosa", 
-                subtitle: "I'm a developer"
+                subtitle: "I'm a full stack developer"
             } as Greeting
         })
         const ptbr = ref({
             greeting: {
                 intro: "Olá, me chamo ",
                 title: "Raphael Barbosa",
-                subtitle: "Sou desenvolvedor"
+                subtitle: "Sou desenvolvedor Full Stack"
             } as Greeting
         })
         watch(locale,() => {

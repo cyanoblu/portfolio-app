@@ -14,36 +14,29 @@ export const useAboutStore = defineStore( 'about', () => {
     const ptbr = ref({
         about : {
             title: 'Sobre',
-            conjunction: 'e',
-            emphasis1: 'analista de desenvolvimento',
-            emphasis2: 'desenvolvedor web',
-            emphasis3: 'Vue',
-            emphasis4: 'ApexCharts',
-            p1: 'Sou ',
-            p2: ` com 2 anos de experiência no setor entregando soluções personalizadas para diferentes negócios.`,
-            p3: `Participei ativamente no desenho e desenvolvimento de interfaces para avaliação de métricas
-            e análise de dados utilizando `,
-            p4: `Integrando soluções personalizadas no ERP
-            Sankhya além de outros projetos que abrangem desde automação de coleta de dados com Python a
-            análise processual em UML.`,
-            p5: `Atualmente, busco aprimorar meus conhecimentos em desenvolvimento web atingindo todos os
-            níveis do processo com forte afinidade em front end.`,
+            about: `Sou um Desenvolvedor Full Stack e Analista de Desenvolvimento apaixonado 
+                    por desafios e inovação, com experiência em personalizações de ERP, 
+                    desenvolvimento de aplicativos web/mobile e criação de dashboards reativos.
+                    Minha expertise inclui desenho e arquitetura de aplicações web, integração
+                    de sistemas e programação em diversas tecnologias como Javascript, Typescript,
+                    Python, Kotlin, Vue entre outras. Com um alto nível de proficiência em inglês
+                    e formação em Análise e Desenvolvimento de Sistemas, estou sempre em busca de
+                    novos conhecimentos e oportunidades para contribuir de forma significativa para
+                    o crescimento e sucesso das organizações e meus clientes.`
         } as About
     })
 
     const eng = ref({
         about : {
             title: 'About me',
-            conjunction: 'and',
-            emphasis1: 'development analyst',
-            emphasis2: 'web developer',
-            emphasis3: 'Vue',
-            emphasis4: 'ApexCharts',
-            p1: 'I am a ',
-            p2: ' with 2 years of experience in the sector delivering customized solutions for different businesses.',
-            p3: 'I actively participated in the design and development of interfaces for metric evaluation and data analysis using',
-            p4: 'Integrating customized solutions into the ERP Sankhya, as well as other projects ranging from data collection automation with Python to process analysis in UML.',
-            p5: 'Currently, I seek to enhance my knowledge in web development, reaching all levels of the process with a strong affinity for front-end.',
+            about: `I am a passionate Full Stack Developer and Development Analyst, driven by challenges 
+                    and innovation, with experience in ERP customizations,web and mobile app development, 
+                    and reactive dashboard design. My expertise includes designing and architecting web 
+                    applications, system integration, and programming in various technologies such as JavaScript, 
+                    TypeScript, Python, Kotlin, Vue, among others. With a high level of proficiency in English 
+                    and a background in Systems Analysis and Development, I am always seeking new knowledge 
+                    and opportunities to contribute significantly to the growth and success of organizations 
+                    and my clients.`
         } as About })
 
     watch(locale,() => {
@@ -60,14 +53,6 @@ export const useAboutStore = defineStore( 'about', () => {
 
 interface About {
     title: string,
-    conjunction: string,
-    emphasis1: string,
-    emphasis2: string,
-    emphasis3: string,
-    emphasis4: string,
-    p1: string,
-    p2: string,
-    p3: string,
-    p4: string,
+    about: String
     
 }
