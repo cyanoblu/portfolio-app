@@ -1,33 +1,21 @@
 <template>
-  <div class="content">
-    <div class="experience-flex-item">
+  <div :class="$style['content']">
+    <div :class="$style['experience-flex-item']">
       <TimelineExp />
     </div>
-    <div class="experience-flex-item">
+    <div :class="$style['experience-flex-item']">
       <h2>{{ useApp.content.sectionTitle.experience }}</h2>
     </div>
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script setup lang="ts">
 import TimelineExp from '@/components/data/TimelineExp.vue'
-import { useExperienceStore } from '@/stores/ExperienceStore'
 import { useAppStore } from '@/stores/AppStore'
 
-export default defineComponent({
-  components: {
-    TimelineExp
-  },
-  setup() {
-    const useExperience = useExperienceStore()
-    const useApp = useAppStore()
-
-    return { useExperience, useApp }
-  }
-})
+const useApp = useAppStore()
 </script>
-<style scoped lang="scss">
+<style module lang="scss">
 @import '../assets/variables.scss';
 .content {
   height: var(--content-height);

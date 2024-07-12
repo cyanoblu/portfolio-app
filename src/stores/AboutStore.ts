@@ -30,7 +30,7 @@ export const useAboutStore = defineStore( 'about', () => {
         about : {
             title: 'About me',
             about: `I am a passionate Full Stack Developer and Development Analyst, driven by challenges 
-                    and innovation, with experience in ERP customizations,web and mobile app development, 
+                    and innovation, with experience in ERP customizations, web and mobile app development, 
                     and reactive dashboard design. My expertise includes designing and architecting web 
                     applications, system integration, and programming in various technologies such as JavaScript, 
                     TypeScript, Python, Kotlin, Vue, among others. With a high level of proficiency in English 

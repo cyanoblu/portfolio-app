@@ -1,13 +1,17 @@
 <template>
-  <div class="content">
-    <RoundUtilButton class="utility" :description="useApp.locale" :action="useApp.toggleLocale" />
-    <div class="hero-flex-item">
+  <div :class="$style['content']">
+    <RoundUtilButton
+      :class="$style['utility']"
+      :description="useApp.locale"
+      :action="useApp.toggleLocale"
+    />
+    <div :class="$style['hero-flex-item']">
       <h2>{{ useHero.content.greeting.intro }}</h2>
       <h1>{{ useHero.content.greeting.title }}</h1>
       <h2>{{ useHero.content.greeting.subtitle }}</h2>
     </div>
-    <div class="hero-flex-item">
-      <div class="action-btn-wrapper">
+    <div :class="$style['hero-flex-item']">
+      <div :class="$style['action-btn-wrapper']">
         <ActionButton
           description="Linkedin"
           url="https://linkedin.com/in/raphaelsbarbosa"
@@ -28,26 +32,16 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script setup lang="ts">
 import { useHeroStore } from '@/stores/HeroStore'
 import ActionButton from '@/components/ui/ActionButton.vue'
 import RoundUtilButton from '@/components/ui/RoundUtilButton.vue'
 import { useAppStore } from '@/stores/AppStore'
 
-export default defineComponent({
-  components: {
-    ActionButton,
-    RoundUtilButton
-  },
-  setup() {
-    const useHero = useHeroStore()
-    const useApp = useAppStore()
-    return { useHero, useApp }
-  }
-})
+const useHero = useHeroStore()
+const useApp = useAppStore()
 </script>
-<style scoped lang="scss">
+<style module lang="scss">
 @import '../assets/variables.scss';
 .content {
   height: var(--content-height);
@@ -71,7 +65,8 @@ h2 {
 .hero-flex-item {
   max-width: 60%;
   margin: auto;
-  align-items: center;
+
+  text-align: center;
 }
 .action-btn-wrapper {
   display: flex;

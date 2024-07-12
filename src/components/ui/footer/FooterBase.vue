@@ -24,20 +24,13 @@
     </div>
   </footer>
 </template>
-<script lang="ts">
-import { defineComponent, ref } from 'vue'
+<script setup lang="ts">
+import { ref } from 'vue'
 import FooterIcon from './FooterIcon.vue'
 import { useAppStore } from '@/stores/AppStore'
 
-export default defineComponent({
-  components: { FooterIcon },
-  setup() {
-    const useApp = useAppStore()
-    const currentDate = ref(new Date().getFullYear())
-
-    return { currentDate, useApp }
-  }
-})
+const useApp = useAppStore()
+const currentDate = ref(new Date().getFullYear())
 </script>
 <style lang="scss" scoped>
 footer {
@@ -65,6 +58,7 @@ footer {
   width: 50%;
   max-width: 50%;
   min-width: 250px;
+  padding: 25px;
   height: fit-content;
   display: flex;
   flex-direction: row;
@@ -75,6 +69,7 @@ footer {
   width: 50%;
   max-width: 50%;
   min-width: 250px;
+  padding: 25px;
   height: fit-content;
   display: flex;
   flex-direction: column;

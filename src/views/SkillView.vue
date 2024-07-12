@@ -1,11 +1,11 @@
 <template>
-  <div class="content">
-    <div class="skill-flex-item">
+  <div :class="$style['content']">
+    <div :class="$style['skill-flex-item']">
       <h2>{{ useApp.content.sectionTitle.skills }}</h2>
     </div>
-    <div class="skill-flex-item">
-      <div class="skill-wrapper">
-        <div v-for="skill in useSkill.content" :key="skill.skill" class="skill">
+    <div :class="$style['skill-flex-item']">
+      <div :class="$style['skill-wrapper']">
+        <div v-for="skill in useSkill.content" :key="skill.skill" :class="$style['skill']">
           <img :src="skill.src" :alt="skill.skill" width="80px" />
           <h3>{{ skill.skill }}</h3>
         </div>
@@ -14,20 +14,14 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script setup lang="ts">
 import { useSkillStore } from '@/stores/SkillStore'
 import { useAppStore } from '@/stores/AppStore'
 
-export default defineComponent({
-  setup() {
-    const useSkill = useSkillStore()
-    const useApp = useAppStore()
-    return { useSkill, useApp }
-  }
-})
+const useSkill = useSkillStore()
+const useApp = useAppStore()
 </script>
-<style scoped lang="scss">
+<style module lang="scss">
 @import '../assets/variables.scss';
 .content {
   height: var(--content-height);

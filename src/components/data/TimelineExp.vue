@@ -13,17 +13,10 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script setup lang="ts">
 import { useExperienceStore } from '@/stores/ExperienceStore'
 
-export default defineComponent({
-  components: {},
-  setup() {
-    const useExperience = useExperienceStore()
-    return { useExperience }
-  }
-})
+const useExperience = useExperienceStore()
 </script>
 <style scoped lang="scss">
 @import '../../assets/variables.scss';

@@ -1,9 +1,9 @@
 <template>
-  <div class="content">
-    <div class="about-flex-item">
+  <div :class="$style['content']">
+    <div :class="$style['about-flex-item']">
       <h2>{{ useApp.content.sectionTitle.about }}</h2>
     </div>
-    <div class="about-flex-item">
+    <div :class="$style['about-flex-item']">
       <p>
         {{ useAbout.content.about.about }}
       </p>
@@ -11,20 +11,14 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script setup lang="ts">
 import { useAboutStore } from '@/stores/AboutStore'
 import { useAppStore } from '@/stores/AppStore'
 
-export default defineComponent({
-  setup() {
-    const useAbout = useAboutStore()
-    const useApp = useAppStore()
-    return { useAbout, useApp }
-  }
-})
+const useAbout = useAboutStore()
+const useApp = useAppStore()
 </script>
-<style scoped lang="scss">
+<style module lang="scss">
 @import '../assets/variables.scss';
 .content {
   color: var(--vt-c-text-light-2);

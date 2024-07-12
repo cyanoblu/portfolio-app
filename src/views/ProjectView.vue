@@ -1,8 +1,8 @@
 <template>
-  <div class="content">
+  <div :class="$style['content']">
     <h2>{{ useApp.content.sectionTitle.projects }}</h2>
-    <div class="project-card-wrapper">
-      <div v-for="project in useProject.content" :key="project.project" class="project">
+    <div :class="$style['project-card-wrapper']">
+      <div v-for="project in useProject.content" :key="project.project" :class="$style['project']">
         <Card
           :project="project.project"
           :src="project.src"
@@ -13,25 +13,15 @@
     </div>
   </div>
 </template>
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script setup lang="ts">
 import Card from '@/components/data/DataCard.vue'
 import { useProjectStore } from '@/stores/ProjectStore'
 import { useAppStore } from '@/stores/AppStore'
 
-export default defineComponent({
-  components: {
-    Card
-  },
-  setup() {
-    const useProject = useProjectStore()
-    const useApp = useAppStore()
-
-    return { useProject, useApp }
-  }
-})
+const useProject = useProjectStore()
+const useApp = useAppStore()
 </script>
-<style scoped lang="scss">
+<style module lang="scss">
 @import '../assets/variables.scss';
 .content {
   height: auto;
@@ -39,6 +29,14 @@ export default defineComponent({
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  h2 {
+    align-self: center;
+    margin: 30px;
+    font-size: 2em;
+    margin-bottom: 70px;
+    margin-right: 70px;
+  }
 }
 
 .project-card-wrapper {
@@ -47,13 +45,5 @@ export default defineComponent({
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: baseline;
-}
-
-h2 {
-  align-self: center;
-  margin: 30px;
-  font-size: 2em;
-  margin-bottom: 70px;
-  margin-right: 70px;
 }
 </style>
